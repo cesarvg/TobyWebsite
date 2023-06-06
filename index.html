@@ -6,6 +6,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Style sheet -->
+    <link rel="stylesheet" href="styles.css">
+
     <!-- Title -->
     <title>Toby</title>
 </head>
@@ -15,14 +18,49 @@
         <h1>Toby's Page</h1>
     </header>
 
-    <p>Me at the vet's</p>
-    <img src="TobyImages/IMG-2195.jpg" alt="Toby at the vet" style="width:500px;height:600px;">
 
+    <section>
+        <nav>
+          <ul>
+            <li><button type="button" onclick="light(1)">At the Vets</button>
+            <li><button type="button" onclick="light(2)">On the Stairs</button>
+            <li><button type="button" onclick="light(3)">In Nature</button>
+            <li><button type="button" onclick="light(4)">What Bruh</button>
+          </ul>
+        </nav>
+        
+        <article>
+            <h1 id="picDesc">Choose a pic</h1>
+            <img id="myImage" src="TobyImages/IMG-2195.jpg" alt="Toby pics" style="width:200px;height:200px;">
+        </article>
+      </section>
     
     <footer>
         <p>Author: Cesar V</p>
         <p><a href="mailto:xxxxxx@gmail.com">xxxxxx@gmail.com</a></p>
     </footer>
+
+    <script>
+        function light(sw) {
+          var pic;
+          var picDesc;
+          if (sw == 1) {
+            pic = "TobyImages/IMG-2195.jpg"
+            picDesc = "At The Vet"
+          } else if (sw == 2) {
+            pic = "TobyImages/IMG-0010.jpg"
+            picDesc = "On The Stairs"
+          } else if (sw == 3) {
+            pic = "TobyImages/IMG-2496.jpg"
+            picDesc = "In Nature"
+          } else if (sw == 4) {
+            pic = "TobyImages/IMG-6844.jpg"
+            picDesc = "What Bruh"
+          }
+          document.getElementById('myImage').src = pic;
+          document.getElementById('picDesc').innerHTML = picDesc;
+        }
+        </script>
 
 
 </body>
